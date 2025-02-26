@@ -1,7 +1,7 @@
 
 
 # pgoapi - a gameapp goiania
-pgoapi is a client/api/demo for Pokemon Go by https://github.com/tejado.  
+pgo api by tayp 
 It allows automatic parsing of requests/responses by finding the correct protobuf objects over a naming convention and will return the response in a parsed python dictionary format.   
 
  * This is unofficial - USE AT YOUR OWN RISK !
