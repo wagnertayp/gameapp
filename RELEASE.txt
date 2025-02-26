@@ -1,0 +1,10 @@
+Versoes:
+
+- instalador/tabvirt*.iss: instalador windows.
+- ifg/qt/menuprincipal.cpp: dialogo de versao.
+- android/AndroidManifest.xml: as duas versoes.
+- mac(mudar para qt5): ver NOTAS_MAC.
+- ios: Mudar a versao do projeto no Xcode.
+
+Gerar textura para terceiros: bash gera_texturas_modelos_tabuleiros.sh.
+Lembrar de atualizar as texturas do android.

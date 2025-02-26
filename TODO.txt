@@ -1,0 +1,320 @@
+Interessante: https://bazel.build/docs/configurable-attributes
+select é a função do Bazel pra selecionar entre plataformas diferentes.
+
+
+Armadura sem talento: brieth tanalar.
+Finalizar os tesouros: armas e armaduras aparece apenas teste ao adicionar.
+Não tem antitoxina em itens mundanos.
+
+
+Watchdog sempre ativando no final do windows?
+Rotação da base não esta funcionando: criar uma entidade com modelo, uma com textura, outra com modelo. A rotacao da entidade com textura falhará.
+Crash no windows ao abrir menu.
+Linux travadinha ao abrir menu: so ocorre em modo debug. Suspeita: devido ao tempo parado na UI, a atualização de bolhas e animações pode estar pesada.
+
+(aventura) Esgotos: qual doença transmite?
+Modificador de invisibilidade por tamanho (regra especial).
+Miss de iluminacao automatico.
+
+Gerar estatisticas de desenho (stats).
+Pensar em transformar os objetos compostos em instances para comparar.
+
+Dados de vida automatico: nao elite!
+Fazer modelo para ruinas de casas.
+Tesouro: permitir transicao de varios tesouros.
+Implementar acalmar emoções.
+Tabelar doencas.
+Talento sniper: baseado no sniper de besta do PH 2 (aplica metade da destreza no dano).
+
+Pensar se coloco o feiticeiro vulto com trama das sombras tb.
+Dominio enganacao: 'Blefar, Disfarces e Esconder-se passam a ser perícias de classe.'
+
+Tela preta ao salvar.
+
+Janela de forma maior que desktop em formas nao esta maximizando.
+Fazer um efeito ao ler pergaminho.
+
+Terminar armadura e escudo vinda de tesouro.
+- material.
+- permitir mudar.
+
+Veneno:
+- Outros tipos de veneno que nao afetam atributos.
+- Duracao do efeito do veneno esta errada: nao eh um dia. Tem que modelar direito.
+
+Pedra do trovao: deu 1 de dano em alguma situação.
+Itens mundanos ta com pau. Personagem do FC (Launce) não consegue usar fogo alquimico.
+
+Mestre poder ler log dos jogadores.
+Botoes de bonus de pericia.
+
+Escorpiao: pode usar destreza no teste de agarrar.
+Meio dano de armas cortantes e perfurantes de enxames.
+UI de armas e ataques ligados a elas: delegate de arma;
+
+Implementar desarmar: armas que nao podem desarmar (gauntlet), natural. Colocar a arma que esta desarmado.
+Chance de falha de conjuracao (dretch conjurando dretch) e tempo de execucao.
+Fazer hell hound (cão infernal).
+Fazer os invocar criaturas: estao praticamente todos faltando, especialmente o do nivel (ii, iii)
+Mobilidade: como diferenciar ataques de arco e magias de movimentacao?
+Fazer: manto do caos: dificil bagarai.
+Som posicional.
+
+
+Acao de recarregar municao da arma (basear em procurar, cada 5 pontos uma munição?).
+Vincular luz a numero de tochas.
+Terminar a iniciativa de eventos.
+
+Fazer furia maior de barbaro e limitar usos por dia.
+Nova tabela de encontro para batalha de Tilverton.
+Ao criar peao, esta desalgemando
+Movimento reduzido ou anulado em criaturas enredadas.
+Menu para recarregar tabelas.
+Lista de entidades afetadas ordenada.
+Nao consigo desagarrar sem acao.
+Fazer tab igual shift tab, zera ataques, ta confuso.
+
+Circulo magico contra mal: implementar aura.
+Fazer lufada de vento.
+Teste da CD de envenenamento (nao eh por nivel).
+
+Entender a desconexao: dar mensagem pro cliente, tentar reconectar.
+Scrollbar na janela de feiticos.
+
+Modificador de raio_quadrados para acao (ver feitico cativar).
+
+Fazer empunhadura de rajada.
+Criar ataques naturais com dano basico. Ja fiz mordida.
+Testar se outras classes tb funcionam a aleatoriedade.
+atualizar tabuleiro prontos com entidades atualizadas.
+dano_adicional e elemento_dano_adicional. Testar formiga.
+
+Colocar doenca nos ataques, igual veneno. Implementar efeitos.
+Sair de modo corpo a corpo se adversario cair.
+Nao desenhar duas vezes arma dupla.
+Dominar animais.
+Crescer espinhos: modelar o ataque (1d4 de dano e reduz movimento).
+Colocar nivel de conjurador tb em RecomputaDependenciasVenenoParaAtaque. Criar algum campo no veneno que diga isso.
+Esquentar metal e esfriar metal. Criar efeito de tremer para frio.
+Feitiços de 4o, 5o de druida.
+Forma de arvore.
+Armadilha de fogo: dano variavel.
+Fazer mais um bicho do summon nature ally iv.
+Botao de aplicar efeitos na UI.
+Feiticos de druida ate 5o nivel.
+Druida 10.
+Feiticos de cura e infligir em massa para clerigo.
+Flanquear: fazer automatico?
+Feitico de Aliados da natureza.
+Fazer os druidas direito. outros niveis.
+Permitir criacao de entidades com recursos usados.
+Link para magias na UI.
+Se perder conexao tentar reconectar.
+Botao de doar no menu de pergaminhos.
+Para armas de arremesso e corpo a corpo, usar o apropriado pela distancia (exemplo, adaga).
+Barra de progresso de carregamento.
+Fazer objetos esfumacarem tb.
+Colocar posicao da acao na UI.
+Icone para amedrontado e abalado.
+---------------------------
+Proxima sessao.
+Aliados extra planares (da magia de conjuracao). Especialmente arconte maior.
+Implementar efeitos:
+  - imunidade a magia (mais de 1 feitico), imunidade maior (fazer) e elucubracao (fazer).
+  - inseto gigante.
+  - arma rompimento.
+Terminar o shader com modelagem separado.
+Colocar uma textura branca para evitar carregamento de textura o tempo todo.
+  - Fazer uma LRU das unidades de texturas com o que sobraram para evitar carregar textura toda hora.
+Hickups de scroll de textura de bump: apos um tempo elas parecem resetar para uma posicao que nao eh continua com o fim.
+Problema sao acoes fora de contexto OpenGL, por exemplo: MouseParadoEm que eh tratado na ifg/teclado_mouse ao inves do visualizador3d.
+Isso afeta tambem carregamento de tabuleiro por causa do EstadoInicial (mantendo graficos). Que alias, ta bugado quando se deve manter entidades.
+Terminar invocar criaturas I.
+Terminar CP_SELECIONA_ENTIDADES_NO_ALCANCE
+Acabar de conferir a adicao em grupo (especialmente ver restaurar selecionaveis).
+Implementar efeito ver o invisivel.
+Requerimentos de feiticos com material caro (por exemplo, stoneskin po de diamante de 250 PO).
+Terminar os feiticos de obscuro que faltam.
+UI de especializacao de feiticos.
+Transformar muita coisa em mapa (talento, pericias).
+
+Implementar operacoes de combinacao em talentos.
+
+Testar monstros com combinar_com (criar um novo campo: combinar_efeito?).
+Implementar teste de concentracao de feitico automatico quando enredado.
+Implementar cargas de escaravelho de protecao.
+Implementar duracao de entidades conjuradas vinda da magia (por exemplo, enxame de gafanhotos pode vir de praga de insetos).
+
+Resolver o vigor menor (como proceder com a parada do maximo que cura?)
+Implementar afeta apenas tendencia em acoes.
+Permitir feiticos de nivel acima para pergaminhos na UI.
+Efeito de invisibilidade: ao atacar (com dano ou efeito adicional) terminar o efeito.
+Mostrar apenas feiticos de dominio na UI de clerigo no slot de dominio.
+
+Tipo e subtipo de formas alternativas.
+Feiticos de feiticeiro marcados com TODO.
+Capar pericias e talentos.
+Pergaminhos.
+Permitir a uma classe modificar o nivel de magia de outra por UI (ao inves de ser fixo)
+Fazer o modificador de rodadas funcionar nos efeitos adicionais.
+Permitir nomear versoes.
+Mostrar salvacoes do mestre apenas para mestre.
+Permitir mais de uma textura por objeto (util para compostos).
+- Filtrar combo de classes para so mostrar nao monstros.
+- UI para horas.
+- Rever a logica de pontos de vida ta um caos. Provavelmente tem gente com mais PV que o maximo. Nao esta claro o que eh computado.
+
+Anotacoes sessao Wheloon:
+- Adicionar ataques de glabrezu nas tabelas, especialmente modelar martelo caos e nuvem profana e palavra do poder atordoar.
+
+Permitir atraso nas notificacoes da central para os efeitos acontecerem depois.
+Colocar na acao: complemento variavel (tipo de vrock, 1d4+4). Mesma coisa pra rodada variavel.
+Eventos nao estao sendo regerados ao tirar um efeito na mao.
+Bonus magico nao esta sendo aplicado nos ataques seguintes (ordem_ataque).
+Nos complementos, ignorar case.
+Modelar multishot (tiro multiplo).
+Pontos raciais de elfo.
+Zerar botoes ao passar rodada.
+Reflexos some no inicio da acao (nao espera ela acontecer).
+Colocar outros aneis e mantos com efeitos (especialmente em pericias).
+Botao de remover feitico na UI de feiticos.
+Implementar modificadores de armadura e escudo se nao tiver o talento de uso deles.
+Implementar boleadeira (bolas).
+Dados rolados para alguns tipos nao estao aparecendo no log.
+Aplicar dano em fim de efeito ao clicar.
+Barra de status das entidades.
+UI para Ataque poderoso.
+Ao agarrar, ignora reflexos.
+Contador de movimento: colocar no proto (por tipo de movimento) e terminar (e procurar por string mov: pra achar no controle virtual). zerar na atualizacao de rodadas.
+
+Problema na iluminacao:
+Luz pontual esta estranha em objetos compostos (Ver sofa do ape, por exemplo).
+
+Feiticos: ao criar bola de fogo, relampago etc, o dano esta vindo vazio. E o descritor nao esta sendo aplicado. Ver RecomputaDependenciasArma em util.cpp.
+
+Botao para passar horas.
+
+Colocar outros tipos de tesouro.
+Mais habilidades especiais, especialmente as que se escolhem (como evasao para ladino).
+Dar um jeito de transmitir as coisas (tabelas por exemplo) nao srd para clientes. Versionar?
+Ordenacao de tabuleiros salvos por data: Procurar funcao last_write_time.
+Salvacoes e progressao bba automaticos por tipo de classe de monstro (aberração, por exemplo).
+
+Feiticos:
+- Botao de limpar usados.
+- Botoes de feitico causando acao.
+Automatizar dano de feiticos.
+
+Bit para sinalizar que entidade pode cair (por exemplo, tentaculos nao pode).
+Fazer improved grab (ataque que agarra automaticamente alvos menores).
+Agarrar sem afetar alvo quando falha.
+Manobra de derrubar (principalmente em ataques automaticos tipo hiena).
+
+Dominio da conhecimento como de classe.
+Fazer: dominios.
+
+Atualizacao de tabela remota e tabela nao srd.
+
+Agarrar:
+- Modificadores: 4 patas e outros.
+
+Descer iniciativas em 1 para nao baguncar com status.
+Implementar flanquear.
+Munição: implementar direito.
+Implementar bloqueio ambidestro.
+Pre requisitos de talentos.
+Arrumar dados/modelos.asciiproto: dano_basico, bba, bonus etc.
+Implementar dano adicional.
+Modelar dificuldade de acao por classe (por exemplo, coluna de chamas eh 5 clerigo, 4 druida).
+Resistencia a magia.
+UI para aplicacao de efeitos em massa.
+Ataque de multiplos alvos em uma area distribuindo em alvos.
+
+Se possivel, separar armas por classe no combo (simples, comum, exoticas).
+Fazer tabela nao copiavel para evitar copia a toa.
+Modificador de ataque para higher ground.
+
+Ao adicionar entidade, incluir nos algemados.
+Objetos inflamaveis (sem ser entidade) e permitir duracao infinita.
+Ajuste de eventos no android para fazer resolucao menor.
+
+Ao limpar a iniciativa, nao esta atualizando a selecao.
+Salvar a camera de cada personagem.
+Multiplos ataques iguais de diversas criaturas, icone diferente (espada).
+tab \t virando asterisco no texto.
+
+Tirar o deslocamento do alvo da acao e passar para entidade (tipo fumegando) para que a acao nao tenha que ficar mantendo
+o estado e chamando atualiza alvo toda hora. Ao inves disso, vai faze-lo apenas uma vez.
+
+Transformar a matriz de modelagem em attribute e passar como um VBO com o modelo: http://stackoverflow.com/questions/24627445/how-to-include-model-matrix-to-a-vbo. Requer opengl 3 (para ter o divisor de quando o atributo muda).
+
+Mapa de luz no shader simples.
+
+Entidades forma nao tem olho, tratar isso na questao de desenho de luz e oclusao.
+
+Algema no inicio.
+Minimizar state changes do opengl.
+Mais informacoes na primeira pessoa.
+unit test AtaqueVsDefesa.
+Colocar as features (baus, portas, grades etc) em um menu separado e adicionar varias do features.binproto.
+Movimento melhorado: o pessoal teve dificuldade de movimentar usando a camera.
+
+Arrumar a funcao MousePara3dParaleloZero para montar as matrizes baseado na camera.
+
+Versao 2.6.0
+- Botao de textura pode escolher.
+- Opcao de override de fixa. Ajuda na modelagem.
+- Refazer a extracao de VBOs para mapas de oclusao e sombras.
+- Zfight ipad e mapa oclusao.
+- Pinca: com tres para vertical.
+- VBO de acoes.
+- Separar a maldita matriz de view da modelagem.
+- Ver se eh possivel fazer a colisao mais precisa lendo mais pixels.
+- Slide de colisao.
+
+- Geracao de terrenos por tipo (arvores, relevo).
+- Passar controle virtual para interface.
+- Relogio marcando horas e controlando iluminacao?
+- Voltou a dar problema da rede android (sera que eh porque usei platform android-21? Possivel, porque ocorreu entre as versoes).
+- Botao de rotacao de entidades.
+- Bug: entidade composta vazia. Como? Tabuleiro do esconderijo_phaerimm com pau.
+- Rolagem com terreno.
+- Permitir que alguns modelos afundem na terra.
+- Picking de transparencias completas (alfa = 0).
+- Voltar a ideia de implementar a UI universal em cada plataforma de forma nativa, ja que o tratamento
+  de teclado e mouse eh nao trivial. Exemplos: lista de objetos, entrada de string.
+- Warning de desregistrar no destrutor, que da merda (o objeto sera destruido mas ainda processara alguma
+  mensagem, pois o loop fez a copia).
+- Colocar todas as texturas de controle virtual em uma so.
+- Ver se o controle virtual recupera as texturas quando minimizado.
+- Resolver AppNap.
+- Corrigir o menu de formas de desenho para sincronizar com o controle virtual (enviar mensagens).
+- Remover cenario ao remover um objeto que o referencia e nao houver outro (perguntar pq pode ser perigoso!).
+- Sistema de particulas.
+- Refatorar projecao ortogonal para usar matriz picking.
+- Criar um ETAB_TABULEIRO_PRESSIONADO para quando o clique for no chao mas nao nos quadrados.
+- Efeitos apenas para mestre.
+- Outros eventos, animacoes de eventos.
+- Fazer rotacao Z ser suavizada como destino do movimento.
+- Android: tentar usar a libc++ para compilar ao inves do gnustl (ver Application.mk). Da problema no proto.
+- Mudar a espessura do desenho.
+- Bug da transparencia quando um retangulo com textura transparente eh colocado.
+- Credito para atribuicoes.
+- Mais teclado global.
+- Mais teclado ipad.
+- Descobrir pq a segunda auto conexao da pau (aparentemente bug no boost).
+- Texturas faltantes.
+- Mais traducoes.
+- Traducoes ANDROID e IOS.
+- Android e ipad: voltar para UI principal caso falhe a conexao.
+- Adicionar mais unit tests (comecar pelos simples).
+- Unit teste dos glVbo roda.
+- Objetos compostos com transparencia.
+
+Algumas ideias loucas.
+- Interface de mouse generico para tablets (suporte a multitap).
+- Joystick no android.
+- Botao de aplicar mudancas nos dialogos.
+- Outros bits de status (dormindo, paralizado).
+- Outros tipos de efeito das acoes nas entidades (tremer).
+- Selecao de porta pelo servidor.

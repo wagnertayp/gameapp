@@ -1,0 +1,63 @@
+Esta configuração usa vcpkg pra gerenciar as dependencias (abseil, boost e proto). Ver vcpkg.json. Não consegui fazer funcionar com bazel.
+
+
+Vcpkg
+-----
+
+Baixar do github em algum lugar. No projeto, esta configurado como ligado e com manifest (Configuration properties->vcpkg).
+
+Ao alterar o vcpkg.json, rodar vcpkg install.
+
+export VCPKG=/n/Projetos/vcpkg/vcpkg.exe
+$VCPKG install
+
+Usando Pre Build Events
+-----------------------
+
+Deixei configurado os pre build events do projeto para gerar os protos e o moc antes de rodar. Caso não funcione, abaixo tem mais detalhes de como gerar manualmente (neste caso, desabilitar o pre build events do projeto).
+
+
+Gerando os protos
+-----------------
+
+dll bichada do sistema: msvcp140.dll: https://developercommunity.visualstudio.com/t/Access-violation-in-_Thrd_yield-after-up/10664660#T-N10668856
+Copiar do VS2022: VisualStudio/2022/Community/VC/Redist/MSVC/14.40.33807/x64/Microsoft.VC143.CRT/msvcp140.dll 
+e colocar junto com o binario do protoc vcpkg_installed/x64-windows/tools/protobuf/!
+
+Gerando os proto pb.cc pb.h a partir da raiz do codigo:
+win32/vcpkg_installed/x64-windows/tools/protobuf/protoc.exe  -I. --cpp_out=. ent/tabuleiro.proto ent/controle_virtual.proto ent/entidade.proto ent/acoes.proto ntf/notificacao.proto ifg/modelos.proto ent/comum.proto ent/tabelas.proto
+
+Gerando os MOCs
+---------------
+
+export MOC=/c/Qt/5.15.2/msvc2019_64/bin/moc.exe
+
+$MOC -I. -oifg/qt/moc_menuprincipal.cpp ifg/qt/menuprincipal.h
+$MOC -I. -oifg/qt/moc_principal.cpp ifg/qt/principal.h
+$MOC -I. -oifg/qt/moc_util.cpp ifg/qt/util.h
+$MOC -I. -oifg/qt/moc_pericias_util.cpp ifg/qt/pericias_util.h
+$MOC -I. -oifg/qt/moc_evento_util.cpp ifg/qt/evento_util.h
+$MOC -I. -oifg/qt/moc_talentos_util.cpp ifg/qt/talentos_util.h
+$MOC -I. -oifg/qt/moc_bonus_util.cpp ifg/qt/bonus_util.h
+
+Gerando a estrutura de deploy do QT
+-----------------------------------
+
+da raiz:
+
+export QTDEPLOY=/c/Qt/5.15.2/msvc2019_64/bin/windeployqt.exe
+$QTDEPLOY tabvirt.exe
+
+Gerando a estrutura de deploy do tabuleiro
+------------------------------------------
+drive: https://drive.google.com/drive/folders/0B7clSIFMH9R-VmhPckR5OHAzbFE?resourcekey=0-VfGP8WdGy4eAsWuPln0b3w&usp=drive_link
+
+Baixar texturas e modelos.
+
+Baixar o icon.ico também.
+
+Colocar as DLLs do abseil, boost, libprotobuf e libprotobuf-lite, msvcp140, Qt5.
+
+Usar o inno pra gerar o instalador.
+
+

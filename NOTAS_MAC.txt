@@ -1,0 +1,37 @@
+Caminho curto (faz tudo):
+sh gera_mac.sh -v 5.6.0
+
+Explicação do script:
+
+1- Colocar no diretorio mac as coisas da instalação:
+Os executaveis:
+tabvirt
+tabvirt.command
+
+Texturas e dados:
+icon.ico -> iconfile.icns
+texturas/*.png
+dados/*.asciiproto
+shaders/*.c
+modelos3d/*.binproto
+
+O script gera_mac vai copiar tudo pro Contents do bundle. Ao rodar o MACDEPLOYQT ele vai atualizar as dependencias todas pra apontar pro lugar certo (install_name_tool). So pra completar, o install_name_tool faz o binario apontar pras libs que vão no pacote, ao invés das do sistema.
+
+O arquivo tem que ser assinado. Como não tenho uma conta valida, faço assinatura local mesmo, ver o codesign. Sem isso, o executável morre com signal 9 (killed).
+
+No final, o pacote é contruido com o comando pkgbuild.
+
+OBS:
+Nao vi utilidade em usar o plist. De qualquer forma, a versao para criar o arquivo padrao:
+pkgbuild --analyze --root ./mac TabuleiroVirtual.plist
+Depois adicionar --component-plist TabuleiroVirtual.plist.
+
+Gerando Icone do Tabvirt.command
+- Abra a imagem do icone no preview.
+- Selecione tudo.
+- Copie.
+- Clique no tabvirt.command.
+- Get Info
+- Clique no icone (em cima a esquerda)
+- Cole.
+https://support.apple.com/kb/PH13922?locale=pt_BR
